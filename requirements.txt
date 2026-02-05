@@ -1,0 +1,15 @@
+torch
+torchaudio
+transformers>=4.49.0
+accelerate
+librosa
+gradio
+numpy
+scipy
+soundfile
+
+# peft
+# protobuf
+# sentencepiece
+# tiktoken
+# einops

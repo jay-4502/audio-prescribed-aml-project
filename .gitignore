@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+venv/
+.env
+
+# Mac
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+
+# Models & Data (IMPORTANT)
+*.wav
+*.mp3
+transcripts.txt
+models/
+huggingface_cache/
