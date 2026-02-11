@@ -1,10 +1,15 @@
 # 🩺 AI Doctor Prescription Assistant (POC Phase 1)
 
-**Current Status:** *Model Evaluation & Feasibility Study*
+**Current Status:** *Model Evaluation & Feasibility Study with Interactive Prototype*
 
-This repository contains the **Phase 1 Proof of Concept (POC)** for an AI-powered assistant designed to transcribe and structure doctor prescriptions from voice input.
+This repository hosts a **Live Audio Interface** for an AI-powered assistant designed to transcribe doctor prescriptions. It uses a local Gradio web interface to capture microphone input and uses **Qwen2-Audio-7B-Instruct** to transcribe medical dictation into text.
 
-Currently, we are evaluating the **Qwen2-Audio-7B-Instruct** model to assess its baseline capabilities in handling raw audio transcription and multimodal instruction following before moving to domain-specific fine-tuning.
+## 🚀 Key Features
+
+* **Interactive Web UI:** Simple "Record" and "Stop" interface powered by Gradio.
+* **Local Inference:** Runs entirely on your machine (Mac MPS / CUDA), ensuring **patient data privacy** by never sending audio to the cloud.
+* **Auto-Logging:** Automatically saves all transcriptions with timestamps to a local `transcripts.txt` file.
+* **Model:** Uses `Qwen/Qwen2-Audio-7B-Instruct`, a state-of-the-art multimodal model capable of understanding direct audio inputs.
 
 ## 🎯 Project Goals & Roadmap
 
@@ -21,15 +26,6 @@ The ultimate goal is to build a tool that doctors can use to dictate prescriptio
     * Develop a user-friendly interface for clinical settings.
     * Integrate structured output (JSON/EHR compatible formats).
 
-## 🧪 Current Experiment: Qwen2-Audio-7B-Instruct
-
-This specific script runs a local instance of `Qwen/Qwen2-Audio-7B-Instruct`. It is designed to test how well a state-of-the-art multimodal model handles immediate "listen-and-transcribe" tasks and chat-based audio interaction without intermediate ASR steps.
-
-### Technical Highlights
-* **Type:** Multimodal Audio-Text LLM (Direct audio understanding).
-* **Infrastructure:** Runs locally to ensure data privacy (critical for medical data).
-* **Hardware Support:** Optimized for Mac (MPS) using float16 for efficiency, with auto-fallback to CPU or CUDA.
-
 ## 🛠️ Setup & Installation
 
 Follow these steps to run the evaluation environment locally.
@@ -39,6 +35,9 @@ Follow these steps to run the evaluation environment locally.
 * **FFmpeg** (Required for audio processing):
     * *Mac:* `brew install ffmpeg`
     * *Windows:* Download from [ffmpeg.org](https://ffmpeg.org/) and add to PATH.
+* **Hardware:**
+    * *Mac:* Apple Silicon (M1/M2/M3) with at least **16GB RAM** (Model uses ~14GB).
+    * *Windows/Linux:* NVIDIA GPU with 16GB+ VRAM recommended.
 
 ### 2. Environment Setup
 
@@ -61,4 +60,5 @@ pip install -r requirements.txt
 
 # Run the models
 # python pretrained_expt_model/ultavox.py
-python pretrained_expt_model/qwen_audio.py
+# python pretrained_expt_model/qwen_audio.py
+python pretrained_expt_model/qwen_audio_live.py
