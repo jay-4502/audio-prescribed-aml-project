@@ -2,63 +2,49 @@
 
 **Current Status:** *Model Evaluation & Feasibility Study with Interactive Prototype*
 
-This repository hosts a **Live Audio Interface** for an AI-powered assistant designed to transcribe doctor prescriptions. It uses a local Gradio web interface to capture microphone input and uses **Qwen2-Audio-7B-Instruct** to transcribe medical dictation into text.
+This project aims to build an AI-powered assistant to transcribe doctor prescriptions accurately. It currently features a **Live Audio Interface** for testing audio transcription models locally.
 
-## 🚀 Key Features
+## 📂 Project Structure
 
-* **Interactive Web UI:** Simple "Record" and "Stop" interface powered by Gradio.
-* **Local Inference:** Runs entirely on your machine (Mac MPS / CUDA), ensuring **patient data privacy** by never sending audio to the cloud.
-* **Auto-Logging:** Automatically saves all transcriptions with timestamps to a local `transcripts.txt` file.
-* **Model:** Uses `Qwen/Qwen2-Audio-7B-Instruct`, a state-of-the-art multimodal model capable of understanding direct audio inputs.
+- **`experiments/`**: Contains experimental scripts and the initial prototype using `Qwen2-Audio` and `Ultravox`.  
+  👉 **[See Experiments Documentation](experiments/README.md)** for details on running the local Gradio interface and model tests.
 
-## 🎯 Project Goals & Roadmap
+- **`backend/`**: (Coming soon) Server-side logic for the full application.
+- **`frontend/`**: (Coming soon) Client-side application for the full application.
 
-The ultimate goal is to build a tool that doctors can use to dictate prescriptions, which the AI will transcribe and format accurately, specifically handling complex medicine names and dosage instructions.
+## 🚀 Key Features of the Prototype
 
-* **Phase 1 (Current):**
-    * Evaluate open-source multimodal models (Qwen2-Audio, Ultravox, etc.).
-    * Test baseline performance on medical terminology.
-    * Setup local inference pipeline on consumer hardware (Mac MPS / NVIDIA CUDA).
-* **Phase 2:**
-    * Select the best performing 1-2 models.
-    * **Fine-tune** models using a specialized dataset of medicine names, dosages, and medical instructions.
-* **Phase 3:**
-    * Develop a user-friendly interface for clinical settings.
-    * Integrate structured output (JSON/EHR compatible formats).
+* **Interactive Web UI:** Simple "Record" and "Stop" interface (powered by Gradio).
+* **Local Inference:** Runs entirely on your machine (Mac MPS / CUDA), ensuring **patient data privacy**.
+* **Auto-Logging:** Saves transcriptions to `transcripts.txt`.
+* **Model:** Uses `Qwen/Qwen2-Audio-7B-Instruct`.
+
+## 🎯 Project Goals
+
+1.  **Phase 1 (Current):** Evaluate open-source multimodal models and establish a baseline for medical transcription.
+2.  **Phase 2:** Fine-tune selected models on medical datasets.
+3.  **Phase 3:** Develop a full-stack clinical application.
 
 ## 🛠️ Setup & Installation
 
-Follow these steps to run the evaluation environment locally.
-
 ### 1. Prerequisites
 * **Python 3.10+**
-* **FFmpeg** (Required for audio processing):
-    * *Mac:* `brew install ffmpeg`
-    * *Windows:* Download from [ffmpeg.org](https://ffmpeg.org/) and add to PATH.
-* **Hardware:**
-    * *Mac:* Apple Silicon (M1/M2/M3) with at least **16GB RAM** (Model uses ~14GB).
-    * *Windows/Linux:* NVIDIA GPU with 16GB+ VRAM recommended.
+* **FFmpeg**: `brew install ffmpeg` (Mac) or download from [ffmpeg.org](https://ffmpeg.org/) (Windows).
+* **Hardware:** Mac M1/M2/M3 (16GB+ RAM) or NVIDIA GPU (16GB+ VRAM).
 
-### 2. Environment Setup
+### 2. Quick Start
 
 ```bash
 # Clone the repository
-git clone [https://github.com/jay-4502/doctor-prescription-poc.git](https://github.com/jay-4502/doctor-prescription-poc.git)
+git clone https://github.com/jay-4502/doctor-prescription-poc.git
 cd doctor-prescription-poc
 
-# Create virtual environment
+# Create and activate virtual environment
 python3 -m venv venv
-
-# Activate (Mac/Linux)
-source venv/bin/activate
-
-# Activate (Windows)
-venv\Scripts\activate
+source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+```
 
-# Run the models
-# python pretrained_expt_model/ultavox.py
-# python pretrained_expt_model/qwen_audio.py
-python pretrained_expt_model/qwen_audio_live.py
+For instructions on running the experimental models, please refer to the **[Experiments README](experiments/README.md)**.
