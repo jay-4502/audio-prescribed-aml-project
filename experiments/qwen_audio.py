@@ -1,3 +1,12 @@
+"""
+Qwen2-Audio Model Inference Script
+====================================
+Tests the Qwen/Qwen2-Audio-7B-Instruct model for audio understanding tasks.
+Loads audio files (16kHz, mono), sends them with text prompts to the model,
+and retrieves AI-generated responses. Optimized for Apple Silicon (MPS) and CPU.
+Uses low-precision (float16) for memory efficiency on Mac.
+"""
+
 import torch
 import librosa
 from transformers import AutoProcessor, Qwen2AudioForConditionalGeneration

@@ -1,0 +1,191 @@
+# =====================================================
+# AML Audio Prescribed Project - Complete Requirements
+# =====================================================
+# Includes all dependencies for:
+# - Backend API (FastAPI server with Qwen-Audio model inference)
+# - Frontend UI (Streamlit web interface)
+# - Experiments (Various audio models: Qwen, Whisper, Ultravox)
+#
+# Backend (backend/) requirements:
+#   - fastapi: REST API framework
+#   - uvicorn: ASGI server for FastAPI
+#   - python-multipart: File upload support
+#   - torch: PyTorch ML framework
+#   - transformers: HuggingFace model hub integration
+#   - librosa: Audio processing
+#   - accelerate: Distributed training/inference support
+#
+# Frontend (frontend/) requirements:
+#   - streamlit: Web UI framework
+#   - requests: HTTP client for backend API communication
+#
+# Experiments (experiments/) requirements:
+#   - torch, transformers, librosa: Model inference
+#   - gradio: Interactive web demos for experiments
+#   - datasets: Dataset loading and processing
+#   - torchaudio, soundfile: Audio I/O
+#   - numpy, scipy: Numerical computing
+#
+# =====================================================
+
+# Core ML Framework & Model Loading
+torch==2.10.0
+torchaudio==2.10.0
+torchcodec==0.10.0
+transformers==5.2.0
+accelerate==1.12.0
+datasets==2.21.0
+safetensors==0.7.0
+huggingface_hub==1.4.1
+
+# Backend: Web Framework & API
+fastapi==0.129.0
+uvicorn==0.41.0
+uvloop==0.22.1
+starlette==0.52.1
+python-multipart==0.0.22
+pydantic==2.12.5
+pydantic_core==2.41.5
+
+# Frontend: UI Framework
+streamlit==1.54.0
+requests==2.32.5
+
+# Experiments: Interactive Demos
+gradio==6.6.0
+gradio_client==2.1.0
+
+# Audio Processing
+librosa==0.11.0
+soundfile==0.13.1
+pydub==0.25.1
+audioread==3.1.0
+soxr==1.0.0
+torchaudio==2.10.0
+
+# Numerical Computing
+numpy==2.3.5
+scipy==1.17.0
+scikit-learn==1.8.0
+pandas==2.3.3
+
+# Utilities & Data Handling
+requests==2.32.5
+python-dotenv==1.2.1
+PyYAML==6.0.3
+toml==0.10.2
+tomlkit==0.13.3
+
+# HuggingFace & Model Tools
+tokenizers==0.22.2
+regex==2026.1.15
+jiwer==4.0.0
+evaluate==0.4.6
+
+# Numerical & Scientific
+mpmath==1.3.0
+sympy==1.14.0
+joblib==1.5.3
+tqdm==4.67.3
+
+# Image & Data Processing (used by various models)
+pillow==12.1.1
+pyarrow==23.0.1
+
+# Network & File Handling
+aiohttp==3.13.3
+aiofiles==24.1.0
+anyio==4.12.1
+httpx==0.28.1
+httpcore==1.0.9
+
+# Serialization
+protobuf==6.33.5
+orjson==3.11.7
+msgpack==1.1.2
+
+# Dependency Management
+packaging==26.0
+platformdirs==4.9.2
+filelock==3.24.2
+fsspec==2024.6.1
+
+# Development & Debugging
+GitPython==3.1.46
+gitdb==4.0.12
+smmap==5.0.2
+
+# UI Rendering & Display
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+markdown-it-py==4.0.0
+mdurl==0.1.2
+Pygments==2.19.2
+altair==6.0.0
+plotly==5.24.2 
+pydeck==0.9.1
+rich==14.3.2
+
+# System & Performance
+psutil==7.2.2
+tenacity==9.1.4
+watchfiles==1.1.1
+websockets==16.0
+
+# SSL/Network Certificates
+certifi==2026.1.4
+urllib3==2.6.3
+charset-normalizer==3.4.4
+idna==3.11
+
+# Type Hints & Utilities
+typing_extensions==4.15.0
+typing-inspection==0.4.2
+
+# Dependency Management (indirect)
+attrs==25.4.0
+decorator==5.2.1
+dill==0.3.8
+lazy_loader==0.4
+multidict==6.7.1
+multiprocess==0.70.16
+narwhals==2.16.0
+networkx==3.6.1
+numba==0.63.1
+llvmlite==0.46.0
+threadpoolctl==3.6.0
+click==8.3.1
+httptools==0.7.1
+shellingham==1.5.4
+typer==0.24.0
+typer-slim==0.24.0
+cachetools==6.2.6
+jsonschema==4.26.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==0.30.0
+RapidFuzz==3.14.3
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.3
+brotli==1.2.0
+cffi==2.0.0
+pycparser==3.0
+frozenlist==1.8.0
+aiosignal==1.4.0
+aiohappyeyeballs==2.6.1
+six==1.17.0
+hf-xet==1.2.0
+pooch==1.9.0
+propcache==0.4.1
+safehttpx==0.1.7
+semantic-version==2.10.0
+h11==0.16.0
+blinker==1.9.0
+annotated-doc==0.0.4
+annotated-types==0.7.0
+groovy==0.1.2
+lazy_loader==0.4
+tornado==6.5.4
+xxhash==3.6.0
+yarl==1.23.0

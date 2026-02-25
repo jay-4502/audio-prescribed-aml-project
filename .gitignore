@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 venv/
 .env
+references
 
 # Mac
 .DS_Store
@@ -15,5 +16,20 @@ venv/
 *.wav
 *.mp3
 transcripts.txt
+
+# Model files (Large files - not tracked in git)
+# Store model configs separately, add model weights to .gitattributes or DVC if needed
 models/
 huggingface_cache/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
+# Data
+data/temp/
+data/*.csv
+data/*.json
+
+# Logs
+logs

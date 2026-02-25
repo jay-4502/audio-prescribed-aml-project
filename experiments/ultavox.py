@@ -1,3 +1,12 @@
+"""
+Ultravox Audio Model Live Interface
+=====================================
+Demonstrates the fixie-ai/ultravox-v0_7-glm-4_6 multimodal audio model through Gradio.
+Transcribes audio files into text using instruction-based prompts. Includes a monkey-patch
+workaround for Transformers 4.48+ type-checking issues with WhisperProcessor.
+Supports multi-device deployment (CUDA, MPS, CPU) with appropriate precision settings.
+"""
+
 import gradio as gr
 import torch
 import librosa

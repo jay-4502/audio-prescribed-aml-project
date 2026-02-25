@@ -1,3 +1,12 @@
+"""
+Qwen2-Audio Live Interactive Interface
+========================================
+Builds a real-time Gradio web interface for the Qwen2-Audio-7B-Instruct model.
+Allows users to record audio directly in the browser, processes it with the model,
+and displays responses. Features streaming audio input, live transcription, and state management.
+Optimized for Apple Silicon (MPS) with efficient model caching and memory management.
+"""
+
 import torch
 import librosa
 import numpy as np

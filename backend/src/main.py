@@ -5,7 +5,7 @@ import os
 from pathlib import Path
 from fastapi import FastAPI, UploadFile, File, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from backend.src.processing import transcribe_and_structure
+from backend.src.processing import process_audio_pipeline
 
 # --- Configuration ---
 # Define paths relative to this file
@@ -70,7 +70,7 @@ def process_audio(file: UploadFile = File(...)):
         # Note: We use a synchronous 'def' (not async) so FastAPI runs this 
         # in a threadpool, preventing the ML model from blocking the server.
         logger.info(f"Starting inference for {unique_filename}")
-        result_json = transcribe_and_structure(str(temp_file_path))
+        result_json = process_audio_pipeline(str(temp_file_path))
         
         logger.info(f"Inference successful for {unique_filename}")
         return {"status": "success", "data": result_json}

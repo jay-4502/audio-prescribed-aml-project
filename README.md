@@ -44,7 +44,16 @@ python3 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
 
 # Install dependencies
-pip install -r requirements.txt
+pip install -r frontend/requirements.txt -r backend/requirements.txt
+
+# Set path from project's root directory
+export PYTHONPATH=$PYTHONPATH:$(pwd)
+
+# Run the server
+python -m backend.src.main
+
+# Run Frontend
+steamlit run frontend/app.py
 ```
 
 For instructions on running the experimental models, please refer to the **[Experiments README](experiments/README.md)**.
